@@ -1,0 +1,15 @@
+{
+  "name": "Open Cabinet",
+  "description": "See and search all Orders In Privy Council Office Database",
+  "repository": "https://github.com/civictechto/open-cabinet",
+  "website": "http://opencabinet.ca",
+  "keywords": [
+    "civictech",
+    "opendata",
+    "canada"
+  ],
+  "addons": [
+    "mailgun",
+    "heroku-postgresl"
+  ]
+}

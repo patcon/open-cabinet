@@ -1,3 +1,6 @@
+# Open Cabinet
+[![Deploy to Heroku](https://www.herokucdn.com/deploy/button.svg)](https://heroku.com/deploy)
+
 ## SETUP
 
 1. Ensure you've got the Python dependencies in requirements.txt

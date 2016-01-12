@@ -1,7 +1,31 @@
 # Open Cabinet
 [![Deploy to Heroku](https://www.herokucdn.com/deploy/button.svg)](https://heroku.com/deploy)
 
-## SETUP
+## Setup
+
+#### Heroku
+
+You can deploy your own version of this app for testing on Heroku using
+the button above. (You will need to create a Heroku account.)
+
+**Notes:**
+
+* Once you click the deploy button below the form, the site will
+be deployed and populated with scraped sample content for 2015.
+
+* During deploy, the live Privy Council site will be actively scraped,
+  so please run the deploy process sparingly, so as not to overwhelm the
+live site.
+
+* During deploy, the *Run scripts & scale dynos* step will take about 10
+  minutes. This is because an initial scrape is happening here. You may
+view sites as it is populated with data. To do this, scroll back up to
+the top of the form, and notice that the 'App Name' field has been
+populated. You can now access your demo site at:
+
+        https://<app-name>.herokuapps.com
+
+#### Local
 
 1. Ensure you've got the Python dependencies in requirements.txt
 

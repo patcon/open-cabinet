@@ -1,1 +1,1 @@
-web: python openorders/init.py
+web: python openorders/__init__.py

@@ -1,5 +1,5 @@
 from flask import Blueprint
-from db import get_db
+from openorders.db import get_db
 
 alerts_blueprint = Blueprint('alerts', __name__)
 

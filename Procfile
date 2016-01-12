@@ -1,1 +1,1 @@
-web: gunicorn openorders --log-file -
+web: gunicorn openorders:app --log-file -

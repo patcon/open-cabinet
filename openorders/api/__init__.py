@@ -1,6 +1,6 @@
 from flask import Blueprint
 from flask_restful import Api
-from db import get_db
+from openorders.db import get_db
 
 api_blueprint = Blueprint('api', __name__)
 

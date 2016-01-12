@@ -2,9 +2,9 @@ from flask import Flask, jsonify, Response, request, render_template
 from jinja2 import Environment, FileSystemLoader
 import os
 
-from db import get_db
-from api import api_blueprint
-from alerts import alerts_blueprint
+from openorders.db import get_db
+from openorders.api import api_blueprint
+from openorders.alerts import alerts_blueprint
 
 # Used to construct url from missing order_ids in jinja template
 ORDER_URL_START = "http://www.pco-bcp.gc.ca/oic-ddc.asp?lang=eng&Page=secretariats&txtOICID="
@@ -12,7 +12,7 @@ ORDER_URL_END = "&txtFromDate=&txtToDate=&txtPrecis=&txtDepartment=&txtAct=&txtC
 
 
 app = Flask(__name__, static_url_path='/static')
-app.config.from_object('FLASKCONFIG')
+app.config.from_object('openorders.FLASKCONFIG')
 
 
 env = Environment(loader=FileSystemLoader('templates/'))

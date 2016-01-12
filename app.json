@@ -8,8 +8,29 @@
     "opendata",
     "canada"
   ],
+  "env": {
+    "OPENORDERS_FLASK_SECRET": {
+      "description": "A secret key used for signing session cookies. See: http://flask.pocoo.org/docs/0.10/quickstart/#sessions",
+      "generator": "secret"
+    },
+    "OPENORDERS_MAIL_SECRET": {
+      "description": "A secret key used to sign data sent to Mailgun. See: https://pythonhosted.org/itsdangerous/#url-safe-serialization",
+      "generator": "secret"
+    },
+    "OPENORDERS_MAIL_SALT": {
+      "description": "A salt used for data sent to Mailgun. See: https://pythonhosted.org/itsdangerous/#the-salt",
+      "generator": "secret"
+    },
+    "OPENORDERS_FLASK_DEBUG": {
+      "description": "A boolean flag for whether to enable Flask's debug output.",
+      "value": "true"
+    }
+  },
+  "scripts": {
+    "postdeploy": "python scripts/scraper/scrape_all.py -y 2015"
+  },
   "addons": [
     "mailgun",
-    "heroku-postgresl"
+    "heroku-postgresql"
   ]
 }

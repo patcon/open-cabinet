@@ -3,7 +3,7 @@ import ALERTCONFIG
 
 def send_confirmation(text, email, subject):
     return requests.post(
-        ALERTCONFIG.POST_ADDR,
+        'https://api.mailgun.net/v3/{}/messages'.format(ALERTCONFIG.MAILGUN_DOMAIN),
         auth=("api", ALERTCONFIG.MAILGUN_API ),
         data={"from": ALERTCONFIG.ALERTS_EMAIL,
               "to": [ email ],

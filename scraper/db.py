@@ -5,11 +5,14 @@ import contextlib
 psycopg2.extensions.register_type(psycopg2.extensions.UNICODE)
 from psycopg2.extras import RealDictCursor
 
-pool = SimpleConnectionPool(1,10, dbname=DBCONFIG.DBNAME, \
-                                    user= DBCONFIG.USERNAME, \
-                                    host= DBCONFIG.HOST, \
-                                    port=DBCONFIG.PORT, \
-                                    password=DBCONFIG.PASS)
+if DBCONFIG.URL:
+    pool = SimpleConnectionPool(1,10, DBCONFIG.URL)
+else:
+    pool = SimpleConnectionPool(1,10, dbname=DBCONFIG.DBNAME, \
+                                        user= DBCONFIG.USERNAME, \
+                                        host= DBCONFIG.HOST, \
+                                        port=DBCONFIG.PORT, \
+                                        password=DBCONFIG.PASS)
 
 
 @contextlib.contextmanager

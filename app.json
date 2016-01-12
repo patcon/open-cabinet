@@ -27,7 +27,7 @@
     }
   },
   "scripts": {
-    "postdeploy": "python scripts/scraper/scrape_all.py -y 2015"
+    "postdeploy": "python scripts/scraper/init_db.py && python scripts/scraper/scrape_all.py -y 2015"
   },
   "addons": [
     "mailgun",

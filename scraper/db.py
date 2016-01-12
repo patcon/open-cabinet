@@ -1,3 +1,4 @@
+import os
 import psycopg2
 from psycopg2.pool import SimpleConnectionPool
 import DBCONFIG
@@ -31,5 +32,7 @@ def get_db(dictposs=False):
 
 def create_db():
     with get_db() as cur:
-        cur.execute(open("schema.sql", "r").read())
+        scraper_dir = os.path.dirname(__file__)
+        schema_file_path = os.path.join(scraper_dir, "schema.sql")
+        cur.execute(open(schema_file_path, "r").read())
         cur.connection.commit()

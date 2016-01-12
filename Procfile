@@ -1,1 +1,1 @@
-web: python openorders/__init__.py
+web: gunicorn openorders --log-file -

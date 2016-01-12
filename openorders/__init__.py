@@ -1,5 +1,6 @@
 from flask import Flask, jsonify, Response, request, render_template
 from jinja2 import Environment, FileSystemLoader
+import os
 
 from db import get_db
 from api import api_blueprint
@@ -63,4 +64,8 @@ def search():
 
 
 if __name__ == "__main__":
-    app.run()
+    port = os.environ.get('PORT')
+    if port:
+        app.run(port=int(port))
+    else:
+        app.run()
